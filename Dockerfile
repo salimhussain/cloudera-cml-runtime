@@ -41,11 +41,11 @@ RUN chmod +x /usr/local/bin/rstudio-cml
 # from the editors launcher to /usr/local/bin/ml-runtime-editor
 RUN ln -sf /usr/local/bin/rstudio-cml /usr/local/bin/ml-runtime-editor
 
-# Salim - These Packages are reuired before installing packages in R
+# These Packages are required before installing packages in R
 RUN apt-get install -y libharfbuzz-dev libfribidi-dev
 RUN apt-get install -y gfortran
 
-# Salim- Install packages in R
+# Install packages in R
 RUN R -e "install.packages('devtools',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('tidyverse',dependencies=TRUE, repos='http://cran.rstudio.com/')"
 RUN R -e "install.packages('sf',dependencies=TRUE, repos='http://cran.rstudio.com/')"
